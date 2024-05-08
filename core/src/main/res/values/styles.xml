@@ -1,3 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Text" parent="TextAppearance.AppCompat" />
+
+    <style name="Text.Size22">
+        <item name="android:textSize">@dimen/size22</item>
+    </style>
+
+    <style name="Text.Size22.Weight600">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="Text.Size22.Weight600.Grey8">
+        <item name="android:textColor">@color/grey8</item>
+    </style>
+
+    <style name="BackgroundSearchCardView">
+        <item name="cornerRadius">@dimen/x2</item>
+        <item name="cardBackgroundColor">@color/grey3</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="ForegroundSearchCardView">
+        <item name="cornerRadius">@dimen/x2</item>
+        <item name="cardBackgroundColor">@color/grey2</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="boxStrokeWidth">@dimen/x0</item>
+        <item name="hintTextColor">@color/grey6</item>
+    </style>
+
+    <style name="TextInputEditText">
+        <item name="android:textSize">@dimen/x2</item>
+    </style>
 </resources>

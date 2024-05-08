@@ -7,4 +7,6 @@
     <string name="profile">Профиль</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="finding_cheap_tickets">Поиск дешевых авиабилетов</string>
+    <string name="from_moscow">Откуда - Москва</string>
 </resources>
