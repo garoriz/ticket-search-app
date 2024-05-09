@@ -9,4 +9,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="finding_cheap_tickets">Поиск дешевых авиабилетов</string>
     <string name="from_moscow">Откуда - Москва</string>
+    <string name="to_turkey">Куда - Турция</string>
+    <string name="musically_fly">Музыкально отлететь</string>
 </resources>

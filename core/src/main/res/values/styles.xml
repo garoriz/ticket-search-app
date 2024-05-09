@@ -6,12 +6,28 @@
         <item name="android:textSize">@dimen/size22</item>
     </style>
 
-    <style name="Text.Size22.Weight600">
-        <item name="android:textFontWeight">600</item>
+    <style name="Text.Size16">
+        <item name="android:textSize">@dimen/size16</item>
+    </style>
+
+    <style name="Text.Size14">
+        <item name="android:textSize">@dimen/size14</item>
+    </style>
+
+    <style name="Text.Size14.Weight400.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Size16.Weight600.White">
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Text.Size22.Weight600.Grey8">
         <item name="android:textColor">@color/grey8</item>
+    </style>
+
+    <style name="Text.Size22.Weight600.White">
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="BackgroundSearchCardView">
@@ -28,10 +44,26 @@
 
     <style name="TextInputLayout">
         <item name="boxStrokeWidth">@dimen/x0</item>
-        <item name="hintTextColor">@color/grey6</item>
+        <item name="android:textColorHint">@color/grey6</item>
     </style>
 
     <style name="TextInputEditText">
-        <item name="android:textSize">@dimen/x2</item>
+        <item name="android:paddingTop">@dimen/x1</item>
+        <item name="android:paddingStart">@dimen/x0</item>
+        <item name="android:paddingEnd">@dimen/x0</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:textSize">@dimen/size20</item>
+        <item name="android:textColorHint">@color/grey6</item>
+    </style>
+
+    <style name="HorizontalRecyclerView" parent="">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="roundedCorners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/x2</item>
     </style>
 </resources>

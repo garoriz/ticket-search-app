@@ -2,9 +2,14 @@
 <resources>
     <dimen name="x0">0dp</dimen>
     <dimen name="x0_125">1dp</dimen>
+    <dimen name="x0_5">4dp</dimen>
     <dimen name="x1">8dp</dimen>
     <dimen name="x2">16dp</dimen>
+    <dimen name="x2_5">20dp</dimen>
     <dimen name="x3">24dp</dimen>
+    <dimen name="x4">32dp</dimen>
     <dimen name="x5">40dp</dimen>
+    <dimen name="x8">64dp</dimen>
     <dimen name="x13">104dp</dimen>
+    <dimen name="x16_5">132dp</dimen>
 </resources>

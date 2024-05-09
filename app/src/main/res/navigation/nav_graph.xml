@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_airline_tickets"
-        android:name="com.garif.ticketsearchapp.MainFragment"
+        android:name="com.garif.ticketsearchapp.presentation.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/navigation_hotels"
-        android:name="com.garif.ticketsearchapp.BlankFragment"
+        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_in_short"
-        android:name="com.garif.ticketsearchapp.BlankFragment"
+        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_subscriptions"
-        android:name="com.garif.ticketsearchapp.BlankFragment"
+        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.garif.ticketsearchapp.BlankFragment"
+        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
 </navigation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text.Size14.Weight400">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="Text.Size22.Weight600">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="Text.Size16.Weight600">
+        <item name="android:textFontWeight">600</item>
+    </style>
+</resources>

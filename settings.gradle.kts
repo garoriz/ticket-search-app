@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Ticket search app"
 include(":app")
 include(":core")
+include(":network")
