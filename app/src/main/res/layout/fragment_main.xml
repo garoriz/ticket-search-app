@@ -8,6 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="@dimen/x1"
         tools:background="@color/black"
         tools:context=".presentation.main.MainFragment">
 
@@ -24,7 +25,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_search"
-            style="@style/BackgroundSearchCardView"
+            style="@style/BackgroundCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/x2"
@@ -72,13 +73,12 @@
 
                     <View
                         android:id="@+id/divider"
+                        style="@style/Divider"
                         android:layout_width="@dimen/x0"
                         android:layout_height="@dimen/x0_125"
                         android:layout_marginTop="@dimen/x1"
                         android:layout_marginEnd="@dimen/x1"
                         android:layout_weight="1"
-                        android:background="?android:attr/listDivider"
-                        android:backgroundTint="@color/white"
                         app:layout_constraintEnd_toEndOf="@id/et_from"
                         app:layout_constraintStart_toStartOf="@id/et_from"
                         app:layout_constraintTop_toBottomOf="@id/et_from" />
@@ -99,9 +99,21 @@
                         android:inputType="text"
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_clear"
                         app:layout_constraintStart_toEndOf="@id/iv_searching"
                         app:layout_constraintTop_toBottomOf="@id/divider" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_clear"
+                        android:layout_width="@dimen/x3"
+                        android:layout_height="@dimen/x3"
+                        android:layout_marginEnd="@dimen/x2"
+                        android:src="@drawable/cross"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/et_to"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/et_to"
+                        tools:visibility="visible" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
         </com.google.android.material.card.MaterialCardView>
@@ -114,7 +126,8 @@
             android:layout_marginHorizontal="@dimen/x1"
             android:layout_marginTop="@dimen/x4"
             android:text="@string/musically_fly"
-            app:layout_constraintTop_toBottomOf="@id/cv_search" />
+            app:layout_constraintTop_toBottomOf="@id/cv_search"
+            tools:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/offers"
@@ -125,6 +138,340 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/tv_musically_fly"
             tools:itemCount="6"
-            tools:listitem="@layout/offer" />
+            tools:listitem="@layout/offer"
+            tools:visibility="gone" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/modal_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="cv_difficult_route, cv_anywhere, cv_weekend, cv_hot_tickets, cv_recommendations"
+            tools:visibility="visible" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_difficult_route"
+            style="@style/TransparentCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintEnd_toStartOf="@id/cv_anywhere"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_search">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_difficult_route"
+                    android:layout_width="@dimen/x6"
+                    android:layout_height="@dimen/x6"
+                    android:layout_margin="@dimen/x1"
+                    android:src="@drawable/difficult_route"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/Text.Size14.Weight400.White"
+                    android:layout_width="@dimen/x8"
+                    android:layout_height="wrap_content"
+                    android:text="@string/difficult_route"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@id/iv_difficult_route"
+                    app:layout_constraintStart_toStartOf="@id/iv_difficult_route"
+                    app:layout_constraintTop_toBottomOf="@id/iv_difficult_route" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_anywhere"
+            style="@style/TransparentCardView"
+            android:layout_width="@dimen/x8"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintEnd_toStartOf="@id/cv_weekend"
+            app:layout_constraintStart_toEndOf="@id/cv_difficult_route"
+            app:layout_constraintTop_toBottomOf="@id/cv_search">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_anywhere"
+                    android:layout_width="@dimen/x6"
+                    android:layout_height="@dimen/x6"
+                    android:layout_margin="@dimen/x1"
+                    android:src="@drawable/anywhere"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/Text.Size14.Weight400.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anywhere"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@id/iv_anywhere"
+                    app:layout_constraintStart_toStartOf="@id/iv_anywhere"
+                    app:layout_constraintTop_toBottomOf="@id/iv_anywhere" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_weekend"
+            style="@style/TransparentCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintEnd_toStartOf="@id/cv_hot_tickets"
+            app:layout_constraintStart_toEndOf="@id/cv_anywhere"
+            app:layout_constraintTop_toBottomOf="@id/cv_search">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_weekend"
+                    android:layout_width="@dimen/x6"
+                    android:layout_height="@dimen/x6"
+                    android:layout_margin="@dimen/x1"
+                    android:src="@drawable/weekend"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/Text.Size14.Weight400.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Weekend"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@id/iv_weekend"
+                    app:layout_constraintStart_toStartOf="@id/iv_weekend"
+                    app:layout_constraintTop_toBottomOf="@id/iv_weekend" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_hot_tickets"
+            style="@style/TransparentCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cv_weekend"
+            app:layout_constraintTop_toBottomOf="@id/cv_search">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_hot_tickets"
+                    android:layout_width="@dimen/x6"
+                    android:layout_height="@dimen/x6"
+                    android:layout_margin="@dimen/x1"
+                    android:src="@drawable/hot_tickets"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/Text.Size14.Weight400.White"
+                    android:layout_width="@dimen/x8"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hot_tickets"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@id/iv_hot_tickets"
+                    app:layout_constraintStart_toStartOf="@id/iv_hot_tickets"
+                    app:layout_constraintTop_toBottomOf="@id/iv_hot_tickets" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_recommendations"
+            style="@style/BackgroundCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x5"
+            app:layout_constraintTop_toBottomOf="@id/cv_difficult_route">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_istanbul"
+                    style="@style/TransparentCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/x2"
+                    android:layout_marginTop="@dimen/x3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_istanbul"
+                            android:layout_width="@dimen/x5"
+                            android:layout_height="@dimen/x5"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/istanbul"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+                        <TextView
+                            android:id="@+id/tv_istanbul"
+                            style="@style/Text.Size16.Weight600.White"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x1"
+                            android:text="@string/Istanbul"
+                            app:layout_constraintStart_toEndOf="@id/iv_istanbul"
+                            app:layout_constraintTop_toTopOf="@id/iv_istanbul" />
+
+                        <TextView
+                            style="@style/Text.Size14.Weight400.Grey5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x1"
+                            android:text="@string/popular_destination"
+                            app:layout_constraintStart_toEndOf="@id/iv_istanbul"
+                            app:layout_constraintTop_toBottomOf="@id/tv_istanbul" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/divider1_in_recommendations"
+                    style="@style/Divider"
+                    android:layout_width="@dimen/x0"
+                    android:layout_height="@dimen/x0_125"
+                    android:layout_marginTop="@dimen/x1"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="@id/cv_istanbul"
+                    app:layout_constraintStart_toStartOf="@id/cv_istanbul"
+                    app:layout_constraintTop_toBottomOf="@id/cv_istanbul" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_sochi"
+                    style="@style/TransparentCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/x2"
+                    android:layout_marginTop="@dimen/x2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider1_in_recommendations">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_sochi"
+                            android:layout_width="@dimen/x5"
+                            android:layout_height="@dimen/x5"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/sochi"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+                        <TextView
+                            android:id="@+id/tv_sochi"
+                            style="@style/Text.Size16.Weight600.White"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x1"
+                            android:text="@string/Sochi"
+                            app:layout_constraintStart_toEndOf="@id/iv_sochi"
+                            app:layout_constraintTop_toTopOf="@id/iv_sochi" />
+
+                        <TextView
+                            style="@style/Text.Size14.Weight400.Grey5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x1"
+                            android:text="@string/popular_destination"
+                            app:layout_constraintStart_toEndOf="@id/iv_sochi"
+                            app:layout_constraintTop_toBottomOf="@id/tv_sochi" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/divider2_in_recommendations"
+                    style="@style/Divider"
+                    android:layout_width="@dimen/x0"
+                    android:layout_height="@dimen/x0_125"
+                    android:layout_marginTop="@dimen/x1"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="@id/cv_istanbul"
+                    app:layout_constraintStart_toStartOf="@id/cv_istanbul"
+                    app:layout_constraintTop_toBottomOf="@id/cv_sochi" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_phuket"
+                    style="@style/TransparentCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/x2"
+                    android:layout_marginTop="@dimen/x2"
+                    android:layout_marginBottom="@dimen/x3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider2_in_recommendations">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_phuket"
+                            android:layout_width="@dimen/x5"
+                            android:layout_height="@dimen/x5"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/phuket"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+                        <TextView
+                            android:id="@+id/tv_phuket"
+                            style="@style/Text.Size16.Weight600.White"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x1"
+                            android:text="@string/phuket"
+                            app:layout_constraintStart_toEndOf="@id/iv_phuket"
+                            app:layout_constraintTop_toTopOf="@id/iv_phuket" />
+
+                        <TextView
+                            style="@style/Text.Size14.Weight400.Grey5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x1"
+                            android:text="@string/popular_destination"
+                            app:layout_constraintStart_toEndOf="@id/iv_phuket"
+                            app:layout_constraintTop_toBottomOf="@id/tv_phuket" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

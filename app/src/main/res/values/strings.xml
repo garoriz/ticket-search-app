@@ -11,4 +11,12 @@
     <string name="from_moscow">Откуда - Москва</string>
     <string name="to_turkey">Куда - Турция</string>
     <string name="musically_fly">Музыкально отлететь</string>
+    <string name="difficult_route">Сложный маршрут</string>
+    <string name="anywhere">Куда угодно</string>
+    <string name="Weekend">Выходные</string>
+    <string name="hot_tickets">Горячие билеты</string>
+    <string name="Istanbul">Стамбул</string>
+    <string name="popular_destination">Популярное направление</string>
+    <string name="Sochi">Сочи</string>
+    <string name="phuket">Пхукет</string>
 </resources>

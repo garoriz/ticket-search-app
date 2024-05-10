@@ -4,8 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.garif.core1.util.AppViewModelFactory
 import com.garif.core1.util.SpacesItemDecoration
 import com.garif.ticketsearchapp.R
@@ -38,6 +40,47 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentMainBinding.bind(view)
+
+        with(binding) {
+            etTo.setOnFocusChangeListener { _, hasFocus ->
+                ivClear.isVisible = hasFocus
+                tvMusicallyFly.isVisible = !hasFocus
+                offers.isVisible = !hasFocus
+                modalWindow.isVisible = hasFocus
+            }
+
+            ivClear.setOnClickListener {
+                etTo.text.clear()
+            }
+
+            cvDifficultRoute.setOnClickListener {
+                findNavController().navigate(R.id.action_navigation_airline_tickets_to_blank_fragment)
+            }
+
+            cvAnywhere.setOnClickListener {
+                etTo.setText(getString(R.string.anywhere))
+            }
+
+            cvWeekend.setOnClickListener {
+                findNavController().navigate(R.id.action_navigation_airline_tickets_to_blank_fragment)
+            }
+
+            cvHotTickets.setOnClickListener {
+                findNavController().navigate(R.id.action_navigation_airline_tickets_to_blank_fragment)
+            }
+
+            cvIstanbul.setOnClickListener {
+                etTo.setText(getString(R.string.Istanbul))
+            }
+
+            cvSochi.setOnClickListener {
+                etTo.setText(getString(R.string.Sochi))
+            }
+
+            cvPhuket.setOnClickListener {
+                etTo.setText(getString(R.string.phuket))
+            }
+        }
 
         initObservers()
         viewModel.onGetOffers()

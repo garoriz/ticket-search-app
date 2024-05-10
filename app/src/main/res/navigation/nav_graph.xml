@@ -9,7 +9,11 @@
         android:id="@+id/navigation_airline_tickets"
         android:name="com.garif.ticketsearchapp.presentation.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_navigation_airline_tickets_to_blank_fragment"
+            app:destination="@id/blank_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_hotels"
         android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
@@ -27,6 +31,12 @@
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_profile"
+        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+
+    <fragment
+        android:id="@+id/blank_fragment"
         android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
