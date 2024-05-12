@@ -4,13 +4,16 @@
     <dimen name="x0_125">1dp</dimen>
     <dimen name="x0_5">4dp</dimen>
     <dimen name="x1">8dp</dimen>
+    <dimen name="x1_5">12dp</dimen>
     <dimen name="x2">16dp</dimen>
     <dimen name="x2_5">20dp</dimen>
     <dimen name="x3">24dp</dimen>
     <dimen name="x4">32dp</dimen>
     <dimen name="x5">40dp</dimen>
     <dimen name="x6">48dp</dimen>
+    <dimen name="x6_25">50dp</dimen>
     <dimen name="x8">64dp</dimen>
     <dimen name="x13">104dp</dimen>
     <dimen name="x16_5">132dp</dimen>
+    <dimen name="x62_5">500dp</dimen>
 </resources>

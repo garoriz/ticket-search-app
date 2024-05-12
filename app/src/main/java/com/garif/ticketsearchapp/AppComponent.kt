@@ -1,8 +1,9 @@
 package com.garif.ticketsearchapp
 
 import android.content.Context
-import com.garif.ticketsearchapp.di.BlankFeatureComponent
-import com.garif.ticketsearchapp.di.MainFeatureComponent
+import com.garif.blank_feature.di.BlankFeatureComponent
+import com.garif.main_feature.di.MainFeatureComponent
+import com.garif.selected_country_feature.di.SelectedCountryFeatureComponent
 import dagger.BindsInstance
 import dagger.Component
 
@@ -13,6 +14,8 @@ interface AppComponent {
     fun createBlankComponent(): BlankFeatureComponent
 
     fun createMainComponent(): MainFeatureComponent
+
+    fun createSelectedCountryComponent(): SelectedCountryFeatureComponent
 
     @Component.Factory
     interface AppComponentFactory {

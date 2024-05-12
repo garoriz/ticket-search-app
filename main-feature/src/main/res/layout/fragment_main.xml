@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/x1"
+        tools:background="@color/black"
+        tools:context="com.garif.main_feature.presentation.MainFragment">
+
+        <TextView
+            android:id="@+id/tv_finding_cheap_tickets"
+            style="@style/Text.Size22.Weight600.Grey8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x13"
+            android:layout_marginTop="@dimen/x3"
+            android:text="@string/finding_cheap_tickets"
+            android:textAlignment="center"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_search"
+            style="@style/BackgroundCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x5"
+            app:layout_constraintTop_toBottomOf="@id/tv_finding_cheap_tickets">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/ForegroundSearchCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x3"
+                app:cardElevation="@dimen/x1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_searching"
+                        android:layout_width="@dimen/x3"
+                        android:layout_height="@dimen/x3"
+                        android:layout_marginStart="@dimen/x1"
+                        android:src="@drawable/searching"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_from"
+                        style="@style/EditText"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x2"
+                        android:layout_marginTop="@dimen/x2"
+                        android:layout_marginEnd="@dimen/x2"
+                        android:background="@null"
+                        android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+                        android:ems="10"
+                        android:hint="@string/from_moscow"
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_searching"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/divider"
+                        style="@style/Divider"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="@dimen/x0_125"
+                        android:layout_marginTop="@dimen/x1"
+                        android:layout_marginEnd="@dimen/x1"
+                        android:layout_weight="1"
+                        app:layout_constraintEnd_toEndOf="@id/et_from"
+                        app:layout_constraintStart_toStartOf="@id/et_from"
+                        app:layout_constraintTop_toBottomOf="@id/et_from" />
+
+                    <EditText
+                        android:id="@+id/et_to"
+                        style="@style/EditText"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x2"
+                        android:layout_marginTop="@dimen/x1"
+                        android:layout_marginEnd="@dimen/x2"
+                        android:layout_marginBottom="@dimen/x2"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+                        android:ems="10"
+                        android:hint="@string/to_turkey"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_searching"
+                        app:layout_constraintTop_toBottomOf="@id/divider" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_musically_fly"
+            style="@style/Text.Size22.Weight600.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x1"
+            android:layout_marginTop="@dimen/x4"
+            android:text="@string/musically_fly"
+            app:layout_constraintTop_toBottomOf="@id/cv_search"
+            tools:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/offers"
+            style="@style/HorizontalRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x3"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tv_musically_fly"
+            tools:itemCount="6"
+            tools:listitem="@layout/offer"
+            tools:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

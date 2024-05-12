@@ -1,12 +1,15 @@
 package com.garif.ticketsearchapp
 
 import android.app.Application
-import com.garif.ticketsearchapp.di.BlankFeatureComponent
-import com.garif.ticketsearchapp.di.BlankFeatureComponentProvider
-import com.garif.ticketsearchapp.di.MainFeatureComponent
-import com.garif.ticketsearchapp.di.MainFeatureComponentProvider
+import com.garif.blank_feature.di.BlankFeatureComponent
+import com.garif.blank_feature.di.BlankFeatureComponentProvider
+import com.garif.main_feature.di.MainFeatureComponent
+import com.garif.main_feature.di.MainFeatureComponentProvider
+import com.garif.selected_country_feature.di.SelectedCountryFeatureComponent
+import com.garif.selected_country_feature.di.SelectedCountryFeatureComponentProvider
 
-class App : Application(), BlankFeatureComponentProvider, MainFeatureComponentProvider {
+class App : Application(), BlankFeatureComponentProvider,
+    MainFeatureComponentProvider, SelectedCountryFeatureComponentProvider {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -20,5 +23,9 @@ class App : Application(), BlankFeatureComponentProvider, MainFeatureComponentPr
 
     override fun getMainFeatureComponent(): MainFeatureComponent {
         return appComponent.createMainComponent()
+    }
+
+    override fun getSelectedCountryFeatureComponent(): SelectedCountryFeatureComponent {
+        return appComponent.createSelectedCountryComponent()
     }
 }

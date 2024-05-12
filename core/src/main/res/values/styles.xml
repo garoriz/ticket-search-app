@@ -14,12 +14,36 @@
         <item name="android:textSize">@dimen/size14</item>
     </style>
 
+    <style name="Text.Size20">
+        <item name="android:textSize">@dimen/size20</item>
+    </style>
+
+    <style name="Text.Size20.Weight600.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Size14.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Size14.Grey5">
+        <item name="android:textColor">@color/grey5</item>
+    </style>
+
+    <style name="Text.Size14.DarkBlue">
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
     <style name="Text.Size14.Weight400.White">
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Text.Size14.Weight400.Grey5">
         <item name="android:textColor">@color/grey5</item>
+    </style>
+
+    <style name="Text.Size16.Weight400.White">
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Text.Size16.Weight600.White">
@@ -37,6 +61,12 @@
     <style name="BackgroundCardView">
         <item name="cornerRadius">@dimen/x2</item>
         <item name="cardBackgroundColor">@color/grey3</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="DirectFlightsCardView">
+        <item name="cornerRadius">@dimen/x2</item>
+        <item name="cardBackgroundColor">@color/grey4</item>
         <item name="strokeWidth">@dimen/x0</item>
     </style>
 
@@ -85,5 +115,41 @@
     <style name="Divider" parent="">
         <item name="android:background">?android:attr/listDivider</item>
         <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="SelectedTownBtn" parent="">
+        <item name="cornerRadius">@dimen/x6_25</item>
+        <item name="backgroundTint">@color/grey3</item>
+        <item name="textAllCaps">false</item>
+        <item name="iconSize">@dimen/x2</item>
+        <item name="android:paddingHorizontal">@dimen/x2</item>
+        <item name="android:textSize">@dimen/size14</item>
+        <item name="android:paddingVertical">@dimen/x1</item>
+    </style>
+
+    <style name="SelectedTownCardView" parent="">
+        <item name="cardCornerRadius">@dimen/x6_25</item>
+        <item name="cardBackgroundColor">@color/grey3</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="SeeAllTicketsBtn" parent="">
+        <item name="cornerRadius">@dimen/x1</item>
+        <item name="backgroundTint">@color/dark_blue</item>
+        <item name="android:textSize">@dimen/size16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingVertical">@dimen/x1_5</item>
+    </style>
+
+    <style name="SubscriptionToPriceCardView">
+        <item name="cardCornerRadius">@dimen/x1</item>
+        <item name="cardBackgroundColor">@color/grey7</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="MaterialSwitch" parent="">
+        <item name="thumbTint">@drawable/switch_thumb</item>
+        <item name="trackTint">@drawable/switch_track</item>
     </style>
 </resources>

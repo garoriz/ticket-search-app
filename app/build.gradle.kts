@@ -61,4 +61,7 @@ dependencies {
 
     implementation(project(":core"))
     implementation(project(":network"))
+    implementation(project(":main-feature"))
+    implementation(project(":blank-feature"))
+    implementation(project(":selected-country-feature"))
 }

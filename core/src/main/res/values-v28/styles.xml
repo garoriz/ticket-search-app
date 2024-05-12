@@ -12,4 +12,12 @@
     <style name="Text.Size16.Weight600">
         <item name="android:textFontWeight">600</item>
     </style>
+
+    <style name="Text.Size20.Weight600">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="Text.Size16.Weight400">
+        <item name="android:textFontWeight">400</item>
+    </style>
 </resources>

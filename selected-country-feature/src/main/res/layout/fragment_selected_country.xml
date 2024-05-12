@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/black"
+    tools:context=".presentation.SelectedCountryFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_search"
+        style="@style/BackgroundCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x5"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x3"
+                android:layout_marginStart="@dimen/x1"
+                android:src="@drawable/left_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_from"
+                style="@style/EditText"
+                android:layout_width="@dimen/x0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x2"
+                android:layout_marginTop="@dimen/x2"
+                android:layout_marginEnd="@dimen/x2"
+                android:background="@null"
+                android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+                android:ems="10"
+                android:hint="@string/from_moscow"
+                android:inputType="text"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/iv_change"
+                app:layout_constraintStart_toEndOf="@id/iv_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_change"
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x3"
+                android:layout_marginEnd="@dimen/x2"
+                android:src="@drawable/change"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/et_from"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/et_from"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Divider"
+                android:layout_width="@dimen/x0"
+                android:layout_height="@dimen/x0_125"
+                android:layout_marginHorizontal="@dimen/x1"
+                android:layout_marginTop="@dimen/x1"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_back"
+                app:layout_constraintTop_toBottomOf="@id/et_from" />
+
+            <EditText
+                android:id="@+id/et_to"
+                style="@style/EditText"
+                android:layout_width="@dimen/x0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x2"
+                android:layout_marginTop="@dimen/x1"
+                android:layout_marginEnd="@dimen/x2"
+                android:layout_marginBottom="@dimen/x2"
+                android:background="@null"
+                android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+                android:ems="10"
+                android:hint="@string/to_turkey"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_clear"
+                app:layout_constraintStart_toEndOf="@id/iv_back"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x3"
+                android:layout_marginEnd="@dimen/x2"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@id/et_to"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/et_to" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <HorizontalScrollView
+        android:id="@+id/selected_town_buttons"
+        android:layout_width="@dimen/x0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back"
+                style="@style/SelectedTownBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:paddingHorizontal="@dimen/x0_5"
+                android:text="@string/back"
+                app:icon="@drawable/plus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_back"
+                style="@style/SelectedTownCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x0"
+                android:layout_marginVertical="@dimen/x0_5"
+                android:layout_marginStart="@dimen/x1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/default_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:constraint_referenced_ids="iv_plus, tv_back" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_plus"
+                        android:layout_width="@dimen/x2"
+                        android:layout_height="@dimen/x2"
+                        android:layout_marginVertical="@dimen/x1"
+                        android:layout_marginStart="@dimen/x0_5"
+                        android:src="@drawable/plus"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_back"
+                        style="@style/Text.Size14.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/x1"
+                        android:layout_marginStart="@dimen/x1"
+                        android:layout_marginEnd="@dimen/x0_5"
+                        android:text="@string/back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_plus"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/selected_date_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="tv_returning_date, tv_returning_day_of_week" />
+
+                    <TextView
+                        android:id="@+id/tv_returning_date"
+                        style="@style/Text.Size14.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/x1"
+                        android:layout_marginStart="@dimen/x1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="24 фев" />
+
+                    <TextView
+                        android:id="@+id/tv_returning_day_of_week"
+                        style="@style/Text.Size14.Grey5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/x1"
+                        android:layout_marginEnd="@dimen/x1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_returning_date"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text=", сб" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_date"
+                style="@style/SelectedTownCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x0"
+                android:layout_marginVertical="@dimen/x0_5"
+                android:layout_marginStart="@dimen/x1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        style="@style/Text.Size14.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/x1"
+                        android:layout_marginStart="@dimen/x1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="24 фев" />
+
+                    <TextView
+                        android:id="@+id/tv_day_of_week"
+                        style="@style/Text.Size14.Grey5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/x1"
+                        android:layout_marginEnd="@dimen/x1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_date"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text=", сб" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_one_economy"
+                style="@style/SelectedTownBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:text="@string/one_economy"
+                app:icon="@drawable/profile"
+                app:iconTint="@color/grey5"
+                app:layout_constraintStart_toEndOf="@id/btn_date"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/SelectedTownBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:layout_marginEnd="@dimen/x1"
+                android:text="@string/filters"
+                app:icon="@drawable/filters"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_one_economy"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_direct_flights"
+        style="@style/DirectFlightsCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x1"
+        app:layout_constraintTop_toBottomOf="@id/selected_town_buttons">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_direct_flights"
+                style="@style/Text.Size20.Weight600.White"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x2"
+                android:layout_marginTop="@dimen/x2"
+                android:text="@string/direct_flights"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_first_company"
+                style="@style/TransparentCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/x2"
+                android:layout_marginTop="@dimen/x2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_direct_flights">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_red_circle"
+                        android:layout_width="@dimen/x3"
+                        android:layout_height="@dimen/x3"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/red_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+                    <TextView
+                        android:id="@+id/tv_first_company"
+                        style="@style/Text.Size14.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:includeFontPadding="false"
+                        app:layout_constraintStart_toEndOf="@id/iv_red_circle"
+                        app:layout_constraintTop_toTopOf="@id/iv_red_circle"
+                        tools:text="Уральские авиалинии" />
+
+                    <TextView
+                        android:id="@+id/tv_first_company_price"
+                        style="@style/Text.Size14.DarkBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:includeFontPadding="false"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_arrow_1"
+                        app:layout_constraintTop_toTopOf="@id/iv_red_circle"
+                        tools:text="2 390 ₽ " />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_right_arrow_1"
+                        android:layout_width="@dimen/x2"
+                        android:layout_height="@dimen/x2"
+                        android:src="@drawable/right_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_range_in_first_company"
+                        style="@style/Text.Size14.Weight400.White"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_arrow_1"
+                        app:layout_constraintStart_toEndOf="@id/iv_red_circle"
+                        app:layout_constraintTop_toBottomOf="@id/tv_first_company"
+                        tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00      " />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/divider1_in_direct_flights"
+                style="@style/Divider"
+                android:layout_width="@dimen/x0"
+                android:layout_height="@dimen/x0_125"
+                android:layout_marginTop="@dimen/x1"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="@id/cv_first_company"
+                app:layout_constraintStart_toStartOf="@id/cv_first_company"
+                app:layout_constraintTop_toBottomOf="@id/cv_first_company" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_second_company"
+                style="@style/TransparentCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/x2"
+                android:layout_marginTop="@dimen/x2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1_in_direct_flights">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_blue_circle"
+                        android:layout_width="@dimen/x3"
+                        android:layout_height="@dimen/x3"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/blue_square"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+                    <TextView
+                        android:id="@+id/tv_second_company"
+                        style="@style/Text.Size14.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:includeFontPadding="false"
+                        app:layout_constraintStart_toEndOf="@id/iv_blue_circle"
+                        app:layout_constraintTop_toTopOf="@id/iv_blue_circle"
+                        tools:text="@string/Sochi" />
+
+                    <TextView
+                        android:id="@+id/tv_second_company_price"
+                        style="@style/Text.Size14.DarkBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:includeFontPadding="false"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_arrow_2"
+                        app:layout_constraintTop_toTopOf="@id/iv_blue_circle"
+                        tools:text="2 390 ₽ " />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_right_arrow_2"
+                        android:layout_width="@dimen/x2"
+                        android:layout_height="@dimen/x2"
+                        android:src="@drawable/right_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_range_in_second_company"
+                        style="@style/Text.Size14.Weight400.White"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_arrow_2"
+                        app:layout_constraintStart_toEndOf="@id/iv_blue_circle"
+                        app:layout_constraintTop_toBottomOf="@id/tv_second_company"
+                        tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00      " />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/divider2_in_direct_flights"
+                style="@style/Divider"
+                android:layout_width="@dimen/x0"
+                android:layout_height="@dimen/x0_125"
+                android:layout_marginTop="@dimen/x1"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="@id/cv_first_company"
+                app:layout_constraintStart_toStartOf="@id/cv_first_company"
+                app:layout_constraintTop_toBottomOf="@id/cv_second_company" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_third_company"
+                style="@style/TransparentCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/x2"
+                android:layout_marginTop="@dimen/x2"
+                android:layout_marginBottom="@dimen/x3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2_in_direct_flights">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_white_circle"
+                        android:layout_width="@dimen/x3"
+                        android:layout_height="@dimen/x3"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/white_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+                    <TextView
+                        android:id="@+id/tv_third_company"
+                        style="@style/Text.Size14.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:includeFontPadding="false"
+                        app:layout_constraintStart_toEndOf="@id/iv_white_circle"
+                        app:layout_constraintTop_toTopOf="@id/iv_white_circle"
+                        tools:text="@string/phuket" />
+
+                    <TextView
+                        android:id="@+id/tv_third_company_price"
+                        style="@style/Text.Size14.DarkBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:includeFontPadding="false"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_arrow_3"
+                        app:layout_constraintTop_toTopOf="@id/iv_white_circle"
+                        tools:text="2 390 ₽ " />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_right_arrow_3"
+                        android:layout_width="@dimen/x2"
+                        android:layout_height="@dimen/x2"
+                        android:src="@drawable/right_arrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_range_in_third_company"
+                        style="@style/Text.Size14.Weight400.White"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_arrow_3"
+                        app:layout_constraintTop_toBottomOf="@id/tv_third_company"
+                        tools:text="07:00  09:10   10:00  11:00  12:00  13:00  12:00      " />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/divider3_in_direct_flights"
+                style="@style/Divider"
+                android:layout_width="@dimen/x0"
+                android:layout_height="@dimen/x0_125"
+                android:layout_marginTop="@dimen/x1"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="@id/cv_first_company"
+                app:layout_constraintStart_toStartOf="@id/cv_first_company"
+                app:layout_constraintTop_toBottomOf="@id/cv_third_company" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_see_all_tickets"
+        style="@style/SeeAllTicketsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x2"
+        android:text="@string/see_all_tickets"
+        app:layout_constraintTop_toBottomOf="@id/cv_direct_flights" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_subscription_to_price"
+        style="@style/SubscriptionToPriceCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x3"
+        app:layout_constraintTop_toBottomOf="@id/btn_see_all_tickets">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_bell"
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x3"
+                android:layout_marginVertical="@dimen/x1"
+                android:layout_marginStart="@dimen/x1"
+                android:src="@drawable/bell"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_subscription_to_price"
+                style="@style/Text.Size16.Weight400.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:text="@string/subscription_to_price"
+                app:layout_constraintBottom_toBottomOf="@id/iv_bell"
+                app:layout_constraintStart_toEndOf="@id/iv_bell"
+                app:layout_constraintTop_toTopOf="@id/iv_bell" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch1"
+                style="@style/MaterialSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

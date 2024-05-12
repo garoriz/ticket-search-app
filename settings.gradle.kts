@@ -23,3 +23,6 @@ rootProject.name = "Ticket search app"
 include(":app")
 include(":core")
 include(":network")
+include(":main-feature")
+include(":blank-feature")
+include(":selected-country-feature")

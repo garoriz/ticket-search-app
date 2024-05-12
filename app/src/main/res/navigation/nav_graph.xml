@@ -7,37 +7,44 @@
 
     <fragment
         android:id="@+id/navigation_airline_tickets"
-        android:name="com.garif.ticketsearchapp.presentation.main.MainFragment"
+        android:name="com.garif.main_feature.presentation.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_navigation_airline_tickets_to_blank_fragment"
+            android:id="@+id/action_mainFragment_to_blankFragment"
             app:destination="@id/blank_fragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_selectedCountryFragment"
+            app:destination="@id/selectedCountryFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_hotels"
-        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
+        android:name="com.garif.blank_feature.presentation.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_in_short"
-        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
+        android:name="com.garif.blank_feature.presentation.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_subscriptions"
-        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
+        android:name="com.garif.blank_feature.presentation.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
+        android:name="com.garif.blank_feature.presentation.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
 
     <fragment
         android:id="@+id/blank_fragment"
-        android:name="com.garif.ticketsearchapp.presentation.blank.BlankFragment"
+        android:name="com.garif.blank_feature.presentation.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/selectedCountryFragment"
+        android:name="com.garif.selected_country_feature.presentation.SelectedCountryFragment"
+        android:label="SelectedCountryFragment" />
 </navigation>
