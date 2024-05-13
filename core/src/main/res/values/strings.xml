@@ -17,4 +17,5 @@
     <string name="one_economy">1,эконом</string>
     <string name="filters">фильтры</string>
     <string name="direct_flights">Прямые рейсы</string>
+    <string name="one_passenger">1 пассажир</string>
 </resources>

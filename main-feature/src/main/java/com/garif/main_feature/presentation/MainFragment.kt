@@ -6,14 +6,14 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.garif.core1.showMessage
 import com.garif.core1.util.AppViewModelFactory
-import com.garif.core1.util.SpacesItemDecoration
+import com.garif.core1.util.HorizontalSpacesItemDecoration
 import com.garif.main_feature.R
 import com.garif.main_feature.databinding.FragmentMainBinding
 import com.garif.main_feature.di.MainFeatureComponentProvider
 import com.garif.main_feature.domain.entity.Offer
 import com.garif.main_feature.presentation.adapter.OfferListAdapter
-import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
 
 
@@ -67,7 +67,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 }
 
                 offersListAdapter?.submitList(it as MutableList<Offer>)
-                val spacesItemDecoration = SpacesItemDecoration(
+                val spacesItemDecoration = HorizontalSpacesItemDecoration(
                     spaceInRV
                 )
                 binding.offers.addItemDecoration(spacesItemDecoration)
@@ -79,17 +79,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewModel.error.observe(viewLifecycleOwner) {
             when (it) {
                 is Exception -> {
-                    showMessage(com.garif.core1.R.string.error)
+                    showMessage(binding.root, com.garif.core1.R.string.error)
                 }
             }
         }
-    }
-
-    private fun showMessage(stringId: Int) {
-        Snackbar.make(
-            binding.root,
-            stringId,
-            Snackbar.LENGTH_LONG
-        ).show()
     }
 }

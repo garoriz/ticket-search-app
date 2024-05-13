@@ -1,0 +1,7 @@
+<resources>
+    <string name="filter">Фильтр</string>
+    <string name="price_graphic">График цен</string>
+    <string name="dash">—</string>
+    <string name="slash">/</string>
+    <string name="nonstop">Без пересадок</string>
+</resources>

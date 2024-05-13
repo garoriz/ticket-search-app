@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/black"
+    tools:context=".presentation.AllTicketsFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_top"
+        style="@style/TopCardViewInAllTickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x3"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x3"
+                android:layout_marginVertical="@dimen/x1"
+                android:src="@drawable/blue_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_route"
+                style="@style/Text.Size16.Weight600.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:layout_marginTop="@dimen/x1"
+                app:layout_constraintStart_toEndOf="@id/iv_back"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Москва-Сочи" />
+
+            <TextView
+                android:id="@+id/tv_route_info"
+                style="@style/Text.Size14.Grey6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:layout_marginBottom="@dimen/x1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_back"
+                app:layout_constraintTop_toBottomOf="@id/tv_route"
+                tools:text="23 февраля, 1 пассажир" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tickets"
+        style="@style/VerticalRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x0"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/cv_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:itemCount="3"
+        tools:listitem="@layout/ticket" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_bottom"
+        style="@style/BottomCardViewInAllTickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tickets">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="@dimen/x1_25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_filters"
+                android:layout_width="@dimen/x2"
+                android:layout_height="@dimen/x2"
+                android:src="@drawable/filters"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_filter"
+                style="@style/Text.Size14.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x0_5"
+                android:text="@string/filter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_filters"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_graphic"
+                android:layout_width="@dimen/x2"
+                android:layout_height="@dimen/x2"
+                android:layout_marginStart="@dimen/x2"
+                android:src="@drawable/graphic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_filter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_price_graphic"
+                style="@style/Text.Size14.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x0_5"
+                android:text="@string/price_graphic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_graphic"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

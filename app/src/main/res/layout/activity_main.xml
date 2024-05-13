@@ -14,7 +14,6 @@
         android:layout_width="@dimen/x0"
         android:layout_height="@dimen/x0"
         android:layout_marginTop="@dimen/x0"
-        android:layout_marginBottom="@dimen/x1"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

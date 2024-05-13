@@ -8,16 +8,17 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.garif.core1.PhotoMapper
 import com.garif.main_feature.databinding.OfferBinding
+import com.garif.main_feature.domain.entity.Offer
 import com.garif.main_feature.presentation.MainFragment
 
 class OfferHolder(
     private val binding: OfferBinding,
     private val fragment: MainFragment,
 ) : RecyclerView.ViewHolder(binding.root) {
-    private var offer: com.garif.main_feature.domain.entity.Offer? = null
+    private var offer: Offer? = null
     private val coverCornerPx = 12f
 
-    fun bind(offer: com.garif.main_feature.domain.entity.Offer) {
+    fun bind(offer: Offer) {
         this.offer = offer
         with(binding) {
             ivCover.load(PhotoMapper().photoMapping[offer.id]?.let {

@@ -64,4 +64,5 @@ dependencies {
     implementation(project(":main-feature"))
     implementation(project(":blank-feature"))
     implementation(project(":selected-country-feature"))
+    implementation(project(":all-tickets-feature"))
 }

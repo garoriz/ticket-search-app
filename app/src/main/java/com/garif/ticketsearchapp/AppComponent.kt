@@ -1,6 +1,7 @@
 package com.garif.ticketsearchapp
 
 import android.content.Context
+import com.garif.all_tickets_feature.di.AllTicketsFeatureComponent
 import com.garif.blank_feature.di.BlankFeatureComponent
 import com.garif.main_feature.di.MainFeatureComponent
 import com.garif.selected_country_feature.di.SelectedCountryFeatureComponent
@@ -16,6 +17,8 @@ interface AppComponent {
     fun createMainComponent(): MainFeatureComponent
 
     fun createSelectedCountryComponent(): SelectedCountryFeatureComponent
+
+    fun createAllTicketsFeatureComponent(): AllTicketsFeatureComponent
 
     @Component.Factory
     interface AppComponentFactory {

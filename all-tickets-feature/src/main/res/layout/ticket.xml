@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/x2">
+
+    <TextView
+        android:id="@+id/tv_badge"
+        style="@style/Text.Size14.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/badge_bg"
+        android:elevation="@dimen/x1"
+        android:paddingHorizontal="@dimen/x1_25"
+        android:paddingVertical="@dimen/x0_25"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Самый удобный"
+        tools:visibility="visible" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv"
+        style="@style/TicketCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x1"
+        android:paddingTop="@dimen/x3"
+        app:layout_constraintTop_toTopOf="@id/tv_badge"
+        tools:background="@color/grey4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/x2"
+            android:paddingTop="@dimen/x3"
+            android:paddingEnd="@dimen/x0_5"
+            android:paddingBottom="@dimen/x4">
+
+            <TextView
+                android:id="@+id/tv_price"
+                style="@style/Text.Size22.Weight600.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="6 990 ₽ " />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_red_circle"
+                android:layout_width="@dimen/x3"
+                android:layout_height="@dimen/x3"
+                android:layout_marginTop="@dimen/x4"
+                android:scaleType="centerCrop"
+                android:src="@drawable/red_circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                app:shapeAppearanceOverlay="@style/CustomRoundedImageView" />
+
+            <TextView
+                android:id="@+id/tv_departure_time"
+                style="@style/Text.Size14.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:layout_marginTop="@dimen/x3"
+                app:layout_constraintStart_toEndOf="@id/iv_red_circle"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                tools:text="03:15" />
+
+            <TextView
+                android:id="@+id/tv_departure_airport_code"
+                style="@style/Text.Size14.Grey6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x1"
+                android:layout_marginTop="@dimen/x0_5"
+                app:layout_constraintStart_toEndOf="@id/iv_red_circle"
+                app:layout_constraintTop_toBottomOf="@id/tv_arrival_time"
+                tools:text="VKO" />
+
+            <TextView
+                android:id="@+id/tv_dash"
+                style="@style/Text.Size14.Grey6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x0_25"
+                android:layout_marginTop="@dimen/x3"
+                android:text="@string/dash"
+                app:layout_constraintStart_toEndOf="@id/tv_departure_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+            <TextView
+                android:id="@+id/tv_arrival_time"
+                style="@style/Text.Size14.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x0_25"
+                android:layout_marginTop="@dimen/x3"
+                app:layout_constraintStart_toEndOf="@id/tv_dash"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                tools:text="03:15" />
+
+            <TextView
+                android:id="@+id/tv_arrival_airport_code"
+                style="@style/Text.Size14.Grey6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x0_5"
+                app:layout_constraintStart_toStartOf="@id/tv_arrival_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_arrival_time"
+                tools:text="VKO" />
+
+            <TextView
+                android:id="@+id/tv_flight_time"
+                style="@style/Text.Size14.Weight400.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x2"
+                android:layout_marginTop="@dimen/x3"
+                app:layout_constraintStart_toEndOf="@id/tv_arrival_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                tools:text="4ч в пути" />
+
+            <TextView
+                android:id="@+id/tv_slash"
+                style="@style/Text.Size14.Weight400.Grey5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x0_25"
+                android:layout_marginTop="@dimen/x3"
+                android:text="@string/slash"
+                app:layout_constraintStart_toEndOf="@id/tv_flight_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+            <TextView
+                android:id="@+id/tv_nonstop"
+                style="@style/Text.Size14.Weight400.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x0_25"
+                android:layout_marginTop="@dimen/x3"
+                android:text="@string/nonstop"
+                app:layout_constraintStart_toEndOf="@id/tv_slash"
+                app:layout_constraintTop_toBottomOf="@id/tv_price" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,10 @@
         <item name="android:textColor">@color/grey5</item>
     </style>
 
+    <style name="Text.Size14.Grey6">
+        <item name="android:textColor">@color/grey6</item>
+    </style>
+
     <style name="Text.Size14.DarkBlue">
         <item name="android:textColor">@color/dark_blue</item>
     </style>
@@ -96,6 +100,10 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="VerticalRecyclerView" parent="">
+        <item name="android:orientation">vertical</item>
+    </style>
+
     <style name="roundedCorners" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/x2</item>
@@ -145,6 +153,24 @@
     <style name="SubscriptionToPriceCardView">
         <item name="cardCornerRadius">@dimen/x1</item>
         <item name="cardBackgroundColor">@color/grey7</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="TopCardViewInAllTickets">
+        <item name="cardCornerRadius">@dimen/x0</item>
+        <item name="cardBackgroundColor">@color/grey7</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="BottomCardViewInAllTickets">
+        <item name="cardCornerRadius">@dimen/x6_25</item>
+        <item name="cardBackgroundColor">@color/dark_blue</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="TicketCardView">
+        <item name="cardCornerRadius">@dimen/x1</item>
+        <item name="cardBackgroundColor">@color/grey4</item>
         <item name="strokeWidth">@dimen/x0</item>
     </style>
 

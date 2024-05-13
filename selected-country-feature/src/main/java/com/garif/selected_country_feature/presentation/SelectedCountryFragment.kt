@@ -9,13 +9,14 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.garif.core1.navigate
 import com.garif.core1.navigationData
+import com.garif.core1.showMessage
 import com.garif.core1.util.AppViewModelFactory
 import com.garif.selected_country_feature.R
 import com.garif.selected_country_feature.databinding.FragmentSelectedCountryBinding
 import com.garif.selected_country_feature.di.SelectedCountryFeatureComponentProvider
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -28,6 +29,7 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
     private val viewModel: SelectedCountryViewModel by viewModels {
         factory
     }
+    private var flightDate = ""
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -79,6 +81,16 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
                 datePicker.show(childFragmentManager, "tag")
                 setDatePickerListenerForReturning(datePicker)
             }
+
+            btnSeeAllTickets.setOnClickListener {
+                navigate(
+                    R.id.action_selectedCountryFragment_to_allTicketsFragment,
+                    data = Pair(
+                        etFrom.text.toString() + "-" + etTo.text.toString(),
+                        flightDate + ", " + getString(com.garif.core1.R.string.one_passenger)
+                    )
+                )
+            }
         }
 
         initObservers()
@@ -109,12 +121,13 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
     }
 
     private fun setDate(timeMillis: Long, tvDate: TextView, tvDayOfWeek: TextView) {
-        val dtlong = Date(timeMillis)
-        var sdfdate = SimpleDateFormat("dd ", Locale.getDefault()).format(dtlong)
-        val month = SimpleDateFormat("MMM", Locale.getDefault()).format(dtlong).take(3)
-        sdfdate = "$sdfdate$month"
+        val dateLong = Date(timeMillis)
+        var sdfdate = SimpleDateFormat("dd ", Locale.getDefault()).format(dateLong)
+        val shortMonth = SimpleDateFormat("MMM", Locale.getDefault()).format(dateLong).take(3)
+        flightDate = sdfdate + SimpleDateFormat("MMMM", Locale.getDefault()).format(dateLong)
+        sdfdate = "$sdfdate$shortMonth"
         var dayOfWeek = ", "
-        dayOfWeek += SimpleDateFormat("EE", Locale.getDefault()).format(dtlong)
+        dayOfWeek += SimpleDateFormat("EE", Locale.getDefault()).format(dateLong)
         tvDate.text = sdfdate
         tvDayOfWeek.text = dayOfWeek
     }
@@ -141,17 +154,10 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
         viewModel.error.observe(viewLifecycleOwner) {
             when (it) {
                 is Exception -> {
-                    showMessage(com.garif.core1.R.string.error)
+                    showMessage(binding.root, com.garif.core1.R.string.error)
                 }
             }
         }
     }
 
-    private fun showMessage(stringId: Int) {
-        Snackbar.make(
-            binding.root,
-            stringId,
-            Snackbar.LENGTH_LONG
-        ).show()
-    }
 }

@@ -46,5 +46,13 @@
     <fragment
         android:id="@+id/selectedCountryFragment"
         android:name="com.garif.selected_country_feature.presentation.SelectedCountryFragment"
-        android:label="SelectedCountryFragment" />
+        android:label="SelectedCountryFragment" >
+        <action
+            android:id="@+id/action_selectedCountryFragment_to_allTicketsFragment"
+            app:destination="@id/allTicketsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allTicketsFragment"
+        android:name="com.garif.all_tickets_feature.presentation.AllTicketsFragment"
+        android:label="AllTicketsFragment" />
 </navigation>
