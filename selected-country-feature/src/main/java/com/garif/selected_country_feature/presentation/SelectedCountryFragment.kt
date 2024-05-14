@@ -56,6 +56,7 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
                 val etToString = etTo.text.toString()
                 etTo.setText(etFrom.text.toString())
                 etFrom.setText(etToString)
+                saveEtFromValue()
             }
 
             ivClear.setOnClickListener {
@@ -63,6 +64,12 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
             }
 
             setDate(System.currentTimeMillis(), tvDate, tvDayOfWeek)
+
+            etFrom.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    saveEtFromValue()
+                }
+            }
 
             btnDate.setOnClickListener {
                 val datePicker =
@@ -160,4 +167,15 @@ class SelectedCountryFragment : Fragment(R.layout.fragment_selected_country) {
         }
     }
 
+    private fun saveEtFromValue() {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+            ?: return
+        with(sharedPref.edit()) {
+            putString(
+                getString(com.garif.core1.R.string.et_from_value),
+                binding.etFrom.text.toString()
+            )
+            apply()
+        }
+    }
 }

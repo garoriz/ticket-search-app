@@ -40,21 +40,49 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding = FragmentMainBinding.bind(view)
 
         with(binding) {
+            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+            val etFromValue =
+                sharedPref.getString(getString(com.garif.core1.R.string.et_from_value), "")
+            etFrom.setText(etFromValue)
+
+            etFrom.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    saveEtFromValue()
+                }
+            }
+
             etTo.setOnFocusChangeListener { _, hasFocus ->
                 if (hasFocus) {
-                    val modalBottomSheet = ModalBottomSheet(etFrom.text.toString())
-                    modalBottomSheet.show(childFragmentManager, ModalBottomSheet.TAG)
+                    openBottomSheet()
                 }
             }
 
             etTo.setOnClickListener {
-                val modalBottomSheet = ModalBottomSheet(etFrom.text.toString())
-                modalBottomSheet.show(childFragmentManager, ModalBottomSheet.TAG)
+                openBottomSheet()
             }
         }
 
         initObservers()
         viewModel.onGetOffers()
+    }
+
+    private fun openBottomSheet() {
+        with(binding) {
+            val modalBottomSheet = ModalBottomSheet(etFrom.text.toString())
+            modalBottomSheet.show(childFragmentManager, ModalBottomSheet.TAG)
+        }
+    }
+
+    private fun saveEtFromValue() {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+            ?: return
+        with(sharedPref.edit()) {
+            putString(
+                getString(com.garif.core1.R.string.et_from_value),
+                binding.etFrom.text.toString()
+            )
+            apply()
+        }
     }
 
     private fun initObservers() {

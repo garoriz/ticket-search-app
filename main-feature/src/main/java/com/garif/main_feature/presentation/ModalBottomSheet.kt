@@ -1,5 +1,6 @@
 package com.garif.main_feature.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -96,9 +97,26 @@ class ModalBottomSheet(
                 }
                 false
             }
+
+            etFrom.setOnFocusChangeListener { _, hasFocus ->
+                if (!hasFocus) {
+                    saveEtFromValue()
+                }
+            }
         }
     }
 
+    private fun saveEtFromValue() {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+            ?: return
+        with(sharedPref.edit()) {
+            putString(
+                getString(com.garif.core1.R.string.et_from_value),
+                binding.etFrom.text.toString()
+            )
+            apply()
+        }
+    }
 
     companion object {
         const val TAG = "ModalBottomSheet"

@@ -118,7 +118,7 @@
                 style="@style/Text.Size14.Weight400.White"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/x2"
+                android:layout_marginStart="@dimen/x1_5"
                 android:layout_marginTop="@dimen/x3"
                 app:layout_constraintStart_toEndOf="@id/tv_arrival_time"
                 app:layout_constraintTop_toBottomOf="@id/tv_price"
@@ -138,11 +138,13 @@
             <TextView
                 android:id="@+id/tv_nonstop"
                 style="@style/Text.Size14.Weight400.White"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/x0"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/x0_25"
                 android:layout_marginTop="@dimen/x3"
                 android:text="@string/nonstop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".0"
                 app:layout_constraintStart_toEndOf="@id/tv_slash"
                 app:layout_constraintTop_toBottomOf="@id/tv_price" />
         </androidx.constraintlayout.widget.ConstraintLayout>

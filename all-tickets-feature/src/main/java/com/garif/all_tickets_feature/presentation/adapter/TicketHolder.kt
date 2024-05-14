@@ -28,6 +28,7 @@ class TicketHolder(
             tvArrivalAirportCode.text = ticket.arrivalAirportCode
             tvFlightTime.text = ticket.flightTime
             tvNonstop.isVisible = ticket.isNonstop
+            tvSlash.isVisible = ticket.isNonstop
         }
     }
 
